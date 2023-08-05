@@ -3,7 +3,7 @@
 @section("title", "contact")
 
 @section("content")
-        <div class="container ">
+        <div class="container" style="padding-bottom: 250px">
                 <div class="contact__form mb-3 ">
                     <form action="{{route('login_action')}}" method="POST">
                         @csrf
@@ -29,8 +29,8 @@
                         <button type="submit" class="site-btn">Вход</button>
                     </form>
                 </div>
-                <a href="{{ route('login.social', 'yandex') }}" class="btn btn-primary">Login with Yandex</a>
-                <a href="{{ route('login.social', 'google') }}" class="btn btn-danger">Login with Google</a>
+{{--                <a href="{{ route('login.social', 'yandex') }}" class="btn btn-primary">Login with Yandex</a>--}}
+{{--                <a href="{{ route('login.social', 'google') }}" class="btn btn-danger">Login with Google</a>--}}
         </div>
 
 @endsection

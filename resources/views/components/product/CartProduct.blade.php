@@ -8,13 +8,6 @@
             <h5>{{ $product->convertPrice()['price'] }} {{ $product->convertPrice()['symbol'] }}</h5>
         </div>
     </td>
-    <td class="quantity__item">
-        <div class="quantity">
-            <div class="pro-qty-2">
-                <input type="text" value="{{ $product->pivot->quantity }}">
-            </div>
-        </div>
-    </td>
     <td class="cart__price">{{ $product->convertPrice()['symbol'] }} {{ $product->convertPrice()['price'] * $product->pivot->quantity }}</td>
     <td class="cart__close">
         <form method="POST" action="{{ route('cart.delete', $product->cart->id) }}">

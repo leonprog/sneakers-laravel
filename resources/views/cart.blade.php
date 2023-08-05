@@ -26,9 +26,8 @@
                         <table>
                             <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th>Товар</th>
+                                <th>Цена</th>
                                 <th></th>
                             </tr>
                             </thead>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\UpdateRequest;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
@@ -26,9 +28,11 @@ class AdminIndexController extends Controller
         $this->authorize('view-admin-panel', [self::class]);
 
         $categories = Category::query()->select('id','title')->get();
+        $brands = Brand::query()->select('id', 'title')->get();
 
         return view('admin.addProduct', [
-            'categories' => $categories
+            'categories' => $categories,
+            'brands' => $brands,
         ]);
     }
 
@@ -57,5 +61,13 @@ class AdminIndexController extends Controller
         })->get();
 
         return $user;
+    }
+
+    public function setting(Product $product)
+    {
+        $categories = Category::query()->select('id','title')->get();
+        $brands = Brand::query()->select('id', 'title')->get();
+
+        return view('admin.update', compact('categories', 'brands', 'product'));
     }
 }

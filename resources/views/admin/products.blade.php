@@ -19,7 +19,9 @@
                         <div class="price">{{ $product->price }} руб</div>
                     </div>
                     <div class="btns">
-                        <button type="submit" class="btn btn-dark ">Изменить</button>
+                       <a href="{{ route('setting', $product->id) }}">
+                           <div class="btn btn-dark ">Изменить</div>
+                       </a>
                         <button type="submit" name="product_id" value="{{ $product->id }}" class="btn btn-danger">Удалить</button>
 {{--                        <form action="{{ route('productSetting_action', $product->id) }}" method="POST">--}}
 

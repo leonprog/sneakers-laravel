@@ -50,11 +50,15 @@ Route::prefix('/admin-panel')->middleware(['auth', AdminMiddleware::class])->con
     Route::get('/products', 'showProducts')->name('adminProducts');
     Route::get('/admin-users', 'adminUsers')->name('adminPanel.adminUsers');
 
+    Route::get('/setting/{product}', 'setting')->name('setting');
+
     // action Product
     Route::controller(ProductManagerController::class)->group(function () {
         Route::post('/add-product', 'store')->name('addProduct_action');
         Route::post('/setting/{product}', 'setting')->name('productSetting_action');
         Route::post('/deleted', 'selectDelete')->name('selectedProductDelete_action');
+
+        Route::post('/update/{product}', 'update')->name('admin.update');
     });
 });
 // Cart

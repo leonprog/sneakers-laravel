@@ -19,6 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'email',
         'yandex_id',
@@ -46,7 +47,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function roles(): HasMany
     {
-        return $this->hasMany(RoleUser::class,'user_id', 'id')->select('role_id');
+        return $this->hasMany(RoleUser::class,'user_id', 'id');
     }
 
 //    public function carts()

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddProductRequest;
+use App\Http\Requests\Admin\UpdateRequest;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
@@ -47,6 +48,15 @@ class ProductManagerController extends Controller
         } else {
             Product::query()->whereIn('id', $request->selected_products)->delete();
         }
+
+        return back();
+    }
+
+    public function update(UpdateRequest $request, Product $product)
+    {
+        $validated = $request->validated();
+
+        $product->update($validated);
 
         return back();
     }

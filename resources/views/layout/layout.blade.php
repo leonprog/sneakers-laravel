@@ -26,7 +26,7 @@
 
 <body>
 
-@include("components.preloder")
+{{--@include("components.preloder")--}}
 @include("components.offcanvas")
 @include("components.header")
 

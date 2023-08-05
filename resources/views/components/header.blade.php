@@ -9,23 +9,25 @@
                     <div class="header__top__right">
                         <div class="header__top__links">
                             @guest
-                            <a href="{{ route('login') }}">Вход</a>
-                            <a href="{{ route('registration') }}">Зарегистрироваться</a>
+                                <a href="{{ route('login') }}">Вход</a>
+                                <a href="{{ route('registration') }}">Зарегистрироваться</a>
                             @endguest
                             @auth
-                            @can('view-admin-panel', \App\Http\Controllers\Admin\AdminIndexController::class)
-                            <a href="{{ route('adminPanel') }}">Админ панель</a>
-                            @endcan
-                            <a href="{{ route('logout') }}">Выход</a>
+                                @can('view-admin-panel', \App\Http\Controllers\Admin\AdminIndexController::class)
+                                    <a href="{{ route('adminPanel') }}">Админ панель</a>
+                                @endcan
+                                <a href="{{ route('logout') }}">Выход</a>
                             @endauth
                         </div>
                         <div class="header__top__hover">
-                            <span>{{ session('currency') ? session('currency') : 'RUB' }}<i class="arrow_carrot-down"></i></span>
+                            <span>{{ session('currency') ? session('currency') : 'RUB' }}<i
+                                    class="arrow_carrot-down"></i></span>
                             <form action="{{ route('set-currency') }}" method="POST">
                                 @csrf
                                 <ul>
                                     @foreach(__('currency') as $currency)
-                                    <button type="submit" name="currency" value="{{ $currency['currency'] }}" class="btn">{{ $currency['currency'] }}</button>
+                                        <button type="submit" name="currency" value="{{ $currency['currency'] }}"
+                                                class="btn">{{ $currency['currency'] }}</button>
                                     @endforeach
                                 </ul>
                             </form>
@@ -46,16 +48,17 @@
                 <nav class="header__menu mobile-menu">
                     <ul>
                         <li {{ Route::is('home') ? 'class=active' : ''}}><a href="{{ route('home') }}">Главная</a></li>
-                        <li {{ Route::is('catalog') ? 'class=active' : '' }}><a href="{{ route('catalog') }}">Каталог</a></li>
+                        <li {{ Route::is('catalog') ? 'class=active' : '' }}><a
+                                href="{{ route('catalog') }}">Каталог</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
                     @auth
-{{--                    <a href="#"><img src="img/icon/heart.png" alt=""></a>--}}
-                    <a href="{{ route('cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                    <div class="price">{{ $currencyPrice['totalPrice'] }} {{ $currencyPrice['symbol'] }}</div>
+                        {{--                    <a href="#"><img src="img/icon/heart.png" alt=""></a>--}}
+                        <a href="{{ route('cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <div class="price">{{ $currencyPrice['totalPrice'] }} {{ $currencyPrice['symbol'] }}</div>
                     @endauth
                 </div>
             </div>
