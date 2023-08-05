@@ -32,7 +32,8 @@
             @endforeach
             <button type="submit" class="btn btn-danger">Удалить Выбранное</button>
         </form>
+                {{ $products->links('components.paginate.index') }}
 
-            @include("components.paginate.index", ['paginate' => $products, 'pageCount' => $pageCount])
+{{--            @include("components.paginate.index", ['paginate' => $products, 'pageCount' => $pageCount])--}}
     </div>
 @endsection

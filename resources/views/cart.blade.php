@@ -9,12 +9,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Shopping Cart</h4>
-                        <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <a href="./shop.html">Shop</a>
-                            <span>Shopping Cart</span>
-                        </div>
+                        <h4>Корзина</h4>
                     </div>
                 </div>
             </div>
@@ -50,20 +45,20 @@
                                 <form method="POST" action="{{ route('cart.clear') }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-dark w-75 p-3">Clear Cart</button>
+                                    <button type="submit" style="border: none"><a class="primary-btn">Очистить корзину</a></button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="cart__discount">
-                        <h6>Использовать промокод</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Вести промокод">
-                            <button type="submit">Применить</button>
-                        </form>
-                    </div>
+{{--                    <div class="cart__discount">--}}
+{{--                        <h6>Использовать промокод</h6>--}}
+{{--                        <form action="#">--}}
+{{--                            <input type="text" placeholder="Вести промокод">--}}
+{{--                            <button type="submit">Применить</button>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
                     <div class="cart__total">
                         <ul>
                             <li>Всего <span>{{ $currencyPrice['totalPrice'] }} {{ $currencyPrice['symbol'] }}</span></li>

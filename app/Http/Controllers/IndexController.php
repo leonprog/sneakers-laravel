@@ -27,6 +27,8 @@ class IndexController extends Controller
 
     public function catalog(Request $request)
     {
+//        dd($request->search);
+
         $products = Product::query()
         ->filtered($request)
         ->select(['id', 'title', 'price'])
@@ -35,6 +37,7 @@ class IndexController extends Controller
             $query->select('id', 'product_id', 'image_path');
         }])
         ->with('ratings:id,product_id,rating')
+        ->where('title', 'like', "{$request->search}%")
         ->orderByDesc('created_at')
         ->paginate(12)
         ->withQueryString();

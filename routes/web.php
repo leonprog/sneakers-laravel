@@ -9,6 +9,8 @@ use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CurrencyController;
+use Illuminate\Support\Facades\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,8 @@ use \App\Http\Controllers\CurrencyController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('/registration', 'registration')->name('registration_action');
@@ -39,7 +43,6 @@ Route::controller(IndexController::class)->group(function () {
     Route::get('/catalog/{product}', 'product')->name('product');
     Route::get('/blog', 'blog')->name('blog');
 });
-
 // Admin panel
 Route::prefix('/admin-panel')->middleware(['auth', AdminMiddleware::class])->controller(AdminIndexController::class)->group(function () {
     Route::get('/', 'index')->name('adminPanel');
