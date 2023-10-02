@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\BrandResource;
+use App\MoonShine\Resources\CategoryResource;
+use App\MoonShine\Resources\ProductResource;
 use Illuminate\Support\ServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -23,8 +26,9 @@ class MoonShineServiceProvider extends ServiceProvider
                     ->icon('bookmark'),
             ])->translatable(),
 
-            MenuItem::make('Documentation', 'https://laravel.com')
-                ->badge(fn() => 'Check'),
+            MenuItem::make('Категории', new CategoryResource()),
+            MenuItem::make('Бренды', new BrandResource()),
+            MenuItem::make('Продукты', new ProductResource())
         ]);
     }
 }
