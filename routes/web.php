@@ -21,7 +21,13 @@ use Illuminate\Support\Facades\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/clear', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    return "Кэш очищен. ";
+});
 
 
 Route::controller(AuthController::class)->group(function () {
