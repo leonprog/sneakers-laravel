@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\AdminIndexController;
 use App\Http\Controllers\CartController;
 use App\Models\User;
 use App\Policies\AdminPanelPolicy;
-use App\Policies\cartPolicy;
+use App\Policies\CartPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
