@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\cart;
+use App\Models\Cart;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
