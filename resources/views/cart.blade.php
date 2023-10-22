@@ -31,7 +31,8 @@
                                 <th></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
+                                
                             @each("components.product.cartProduct", $products, 'product')
                             </tbody>
                         </table>
