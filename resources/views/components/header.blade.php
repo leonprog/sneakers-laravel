@@ -50,6 +50,10 @@
                         <li {{ Route::is('home') ? 'class=active' : ''}}><a href="{{ route('home') }}">Главная</a></li>
                         <li {{ Route::is('catalog') ? 'class=active' : '' }}><a
                                 href="{{ route('catalog') }}">Каталог</a></li>
+
+                        @auth
+                            <li {{ Route::is('order') ? 'class=active' : ''}}><a href="{{ route('order') }}">Заказы</a></li>
+                        @endauth
                     </ul>
                 </nav>
             </div>

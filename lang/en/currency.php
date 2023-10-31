@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'USD' => [
-        'currency' => 'USD',
-        'symbol' => '$',
-        'rate' => '75',
-    ],
+//    'USD' => [
+//        'currency' => 'USD',
+//        'symbol' => '$',
+//        'rate' => '75',
+//    ],
     'RUB' => [
         'currency' => 'RUB',
         'symbol' => '₽',

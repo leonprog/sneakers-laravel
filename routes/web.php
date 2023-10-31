@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminIndexController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductManagerController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -48,6 +49,7 @@ Route::controller(IndexController::class)->group(function () {
     Route::get('/catalog', 'catalog')->name('catalog');
     Route::get('/catalog/{product}', 'product')->name('product');
     Route::get('/blog', 'blog')->name('blog');
+
 });
 // Admin panel
 Route::prefix('/admin-panel')->middleware(['auth', AdminMiddleware::class])->controller(AdminIndexController::class)->group(function () {
@@ -75,6 +77,15 @@ Route::prefix('/cart')->middleware('auth')->group(function () {
         Route::post('/add', 'store')->name('cart.add');
         Route::delete('/remove/{cart}', 'delete')->name('cart.delete');
         Route::delete('/clear', 'clearCart')->name('cart.clear');
+    });
+});
+
+
+Route::prefix('/order')->middleware('auth')->group(function () {
+    Route::get('/', [IndexController::class, 'order'])->name('order');
+
+    Route::controller(OrderController::class)->group(function () {
+        Route::post('/create', 'store')->name('order.store');
     });
 });
 
