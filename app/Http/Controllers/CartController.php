@@ -24,7 +24,7 @@ class CartController extends Controller
         return back();
     }
 
-    public function clearCart()
+    public function clear()
     {
         Auth::user()->carts()->detach();
 

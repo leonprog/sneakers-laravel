@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\MoonShine\Resources\BrandResource;
 use App\MoonShine\Resources\CategoryResource;
+use App\MoonShine\Resources\OrderResource;
 use App\MoonShine\Resources\ProductResource;
 use Illuminate\Support\ServiceProvider;
 use MoonShine\MoonShine;
@@ -28,7 +29,9 @@ class MoonShineServiceProvider extends ServiceProvider
 
             MenuItem::make('Категории', new CategoryResource()),
             MenuItem::make('Бренды', new BrandResource()),
-            MenuItem::make('Продукты', new ProductResource())
+            MenuItem::make('Продукты', new ProductResource()),
+
+            MenuItem::make('Заказы', new OrderResource())
         ]);
     }
 }

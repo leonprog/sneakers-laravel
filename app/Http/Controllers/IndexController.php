@@ -87,8 +87,5 @@ class IndexController extends Controller
         return Auth::user()->carts;
     }
 
-    public function order()
-    {
-        return view('orders');
-    }
+
 }

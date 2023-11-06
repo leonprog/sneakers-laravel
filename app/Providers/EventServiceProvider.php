@@ -25,6 +25,7 @@ class EventServiceProvider extends ServiceProvider
             'SocialiteProviders\Google\GoogleExtendSocialite@handle',
         ],
 
+
     ];
 
     /**

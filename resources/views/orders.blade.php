@@ -5,6 +5,11 @@
 @section("content")
         <div class="container" style="padding-bottom: 250px">
                 <div class="contact__form mb-3 ">
+
+                    <div style="margin: 20px 0; font-size: 24px">
+                        Общая цена {{  $currencyPrice['totalPrice'] }} руб
+                    </div>
+
                     <form action="{{route('order.store')}}" method="POST">
                         @csrf
                         @error('city')
@@ -42,6 +47,12 @@
 
 
                         <button type="submit" class="site-btn">Оформить</button>
+
+                        <div class="cards" style="display: flex; margin-top: 100px">
+                            @foreach($carts as $cart)
+                                <img class="cards-item" src="{{ $cart->image_path ?: $cart->image_url  }}">
+                            @endforeach
+                        </div>
                     </form>
                 </div>
 {{--                <a href="{{ route('login.social', 'yandex') }}" class="btn btn-primary">Login with Yandex</a>--}}

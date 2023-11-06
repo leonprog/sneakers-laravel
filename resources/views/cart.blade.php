@@ -1,6 +1,6 @@
 @extends("layout.layout")
 
-@section("title", "Cart")
+@section("title", "Корзина")
 
 @section("content")
     <!-- Breadcrumb Section Begin -->
@@ -31,7 +31,7 @@
                                 <th></th>
                             </tr>
                             </thead>
-                            <tbody> 
+                            <tbody>
 
                             @each("components.product.CartProduct", $products, 'product')
                             </tbody>
@@ -63,7 +63,7 @@
                         <ul>
                             <li>Всего <span>{{ $currencyPrice['totalPrice'] }} {{ $currencyPrice['symbol'] }}</span></li>
                         </ul>
-                        <a href="#" class="primary-btn">Оформить Заказ</a>
+                        <a href="{{ route('order-add') }}" class="primary-btn">Оформить Заказ</a>
                     </div>
                 </div>
             </div>

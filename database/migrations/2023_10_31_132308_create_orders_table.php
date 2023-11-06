@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->enum('status', ['Сбор заказа', 'Едет', 'Ждет получения'])->default('Сбор заказа');
-            $table->foreignIdFor(User::class)->constrained()->nullOnDelete();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

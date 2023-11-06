@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductManagerController;
 use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\CurrencyController;
 use Illuminate\Support\Facades\Request;
@@ -76,13 +77,14 @@ Route::prefix('/cart')->middleware('auth')->group(function () {
     Route::controller(CartController::class)->group(function () {
         Route::post('/add', 'store')->name('cart.add');
         Route::delete('/remove/{cart}', 'delete')->name('cart.delete');
-        Route::delete('/clear', 'clearCart')->name('cart.clear');
+        Route::delete('/clear', 'clear')->name('cart.clear');
     });
 });
 
 
 Route::prefix('/order')->middleware('auth')->group(function () {
-    Route::get('/', [IndexController::class, 'order'])->name('order');
+    Route::get('/add-order', [OrderController::class, 'index'])->name('order-add');
+    Route::get('/order', [OrderController::class, 'list'])->name('order');
 
     Route::controller(OrderController::class)->group(function () {
         Route::post('/create', 'store')->name('order.store');
