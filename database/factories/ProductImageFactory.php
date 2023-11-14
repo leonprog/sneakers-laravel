@@ -20,7 +20,7 @@ class ProductImageFactory extends Factory
     {
         return [
             'product_id' => Product::get()->random()->id,
-            'image_path' => Storage::files("public/product_cover")[random_int(1, 25)],
+            'image_path' => Storage::files("public/product_cover")[random_int(1, 19)],
         ];
     }
 }
