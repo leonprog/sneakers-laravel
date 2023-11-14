@@ -33,7 +33,7 @@ class OrderResource extends Resource
             Text::make('Город', 'city'),
             Text::make('Адрес', 'address'),
             Text::make('Индекс', 'index'),
-            Text::make('Телефон', 'phone'),
+            Text::make('Телефон', 'phone')->hideOnIndex(),
 
             HasMany::make('Продукты', 'products')->fields([
                 ID::make(),
