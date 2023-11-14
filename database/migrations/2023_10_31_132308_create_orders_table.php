@@ -15,6 +15,10 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->enum('status', ['Сбор заказа', 'Едет', 'Ждет получения'])->default('Сбор заказа');
+            $table->string('city');
+            $table->string('address');
+            $table->string('index');
+            $table->string('phone');
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });

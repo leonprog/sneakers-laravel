@@ -9,6 +9,7 @@ use MoonShine\Fields\BelongsTo;
 use MoonShine\Fields\HasMany;
 use MoonShine\Fields\HasOne;
 use MoonShine\Fields\Select;
+use MoonShine\Fields\Text;
 use MoonShine\Resources\Resource;
 use MoonShine\Fields\ID;
 use MoonShine\Actions\FiltersAction;
@@ -29,9 +30,14 @@ class OrderResource extends Resource
                 'Ждет получения' => 'Ждет получения',
             ])->hideOnIndex(),
 
+            Text::make('Город', 'city'),
+            Text::make('Адрес', 'address'),
+            Text::make('Индекс', 'index'),
+            Text::make('Телефон', 'phone'),
+
             HasMany::make('Продукты', 'products')->fields([
                 ID::make(),
-                BelongsTo::make('Товар', 'product', 'title')->nullable()->readonly()
+                BelongsTo::make('Товар', 'product', 'title')->readonly()
             ])->removable()->hideOnIndex()
 
 

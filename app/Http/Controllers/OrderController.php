@@ -35,7 +35,8 @@ class OrderController extends Controller
         $validated = $request->validated();
 
         $order = Order::create([
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
+            ...$validated,
         ]);
         $carts = Auth::user()->carts;
 

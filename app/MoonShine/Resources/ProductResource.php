@@ -35,9 +35,9 @@ class ProductResource extends Resource
             BelongsTo::make('Категории','category_id', 'title')->nullable(),
             BelongsTo::make('Бренд','brand_id', 'title')->nullable(),
 
-            HasMany::make('images')->fields([
-                Image::make('image_path'),
-            ])->hideOnIndex(),
+//            HasMany::make('images')->fields([
+//                Image::make('image_path'),
+//            ])->hideOnIndex(),
 
 
 
