@@ -3,7 +3,6 @@
 @section("title", "shop")
 
 @section("content")
-    <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -19,8 +18,6 @@
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
-    <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
             <div class="row">
@@ -72,5 +69,4 @@
             </div>
         </div>
     </section>
-    <!-- Shop Section End -->
 @endsection

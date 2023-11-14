@@ -29,8 +29,6 @@
                         <button type="submit" class="site-btn">Вход</button>
                     </form>
                 </div>
-{{--                <a href="{{ route('login.social', 'yandex') }}" class="btn btn-primary">Login with Yandex</a>--}}
-{{--                <a href="{{ route('login.social', 'google') }}" class="btn btn-danger">Login with Google</a>--}}
         </div>
 
 @endsection

@@ -27,8 +27,6 @@ class IndexController extends Controller
 
     public function catalog(Request $request)
     {
-//        dd($request->search);
-
         $products = Product::query()
         ->filtered($request)
         ->select(['id', 'title', 'price'])

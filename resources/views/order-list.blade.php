@@ -3,7 +3,6 @@
 @section("title", "Список заказов")
 
 @section("content")
-    <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -15,9 +14,6 @@
             </div>
         </div>
     </section>
-    <!-- Breadcrumb Section End -->
-
-    <!-- Shopping Cart Section Begin -->
     <section class="shopping-cart spad">
         <div class="container">
             <div class="row">
@@ -66,5 +62,4 @@
             </div>
         </div>
     </section>
-    <!-- Shopping Cart Section End -->
 @endsection

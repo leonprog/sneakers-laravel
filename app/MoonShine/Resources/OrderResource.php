@@ -22,17 +22,16 @@ class OrderResource extends Resource
 	public function fields(): array
 	{
 		return [
-		    ID::make('Номер заказа', 'id')->sortable(),
+		    ID::make('Номер заказа', 'id'),
 		    Select::make('Статус', 'status')->options([
-                'Сбор заказа',
-                'Едет',
-                'Ждет получения',
+                'Сбор заказа' => 'Сбор заказа',
+                'Едет' => 'Едет',
+                'Ждет получения' => 'Ждет получения',
             ])->hideOnIndex(),
 
             HasMany::make('Продукты', 'products')->fields([
                 ID::make(),
-                ID::make('product_id'),
-                BelongsTo::make('Товар', 'product', 'title')->nullable()
+                BelongsTo::make('Товар', 'product', 'title')->nullable()->readonly()
             ])->removable()->hideOnIndex()
 
 

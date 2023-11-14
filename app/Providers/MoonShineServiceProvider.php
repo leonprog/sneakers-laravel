@@ -18,20 +18,20 @@ class MoonShineServiceProvider extends ServiceProvider
     public function boot(): void
     {
         app(MoonShine::class)->menu([
-            MenuGroup::make('moonshine::ui.resource.system', [
-                MenuItem::make('moonshine::ui.resource.admins_title', new MoonShineUserResource())
-                    ->translatable()
-                    ->icon('users'),
-                MenuItem::make('moonshine::ui.resource.role_title', new MoonShineUserRoleResource())
-                    ->translatable()
-                    ->icon('bookmark'),
-            ])->translatable(),
+//            MenuGroup::make('moonshine::ui.resource.system', [
+////                MenuItem::make('moonshine::ui.resource.admins_title', new MoonShineUserResource())
+////                    ->translatable()
+////                    ->icon('users'),
+////                MenuItem::make('moonshine::ui.resource.role_title', new MoonShineUserRoleResource())
+////                    ->translatable()
+////                    ->icon('bookmark'),
+////            ])->translatable(),
 
-            MenuItem::make('Категории', new CategoryResource()),
-            MenuItem::make('Бренды', new BrandResource()),
-            MenuItem::make('Продукты', new ProductResource()),
+            MenuItem::make('Категории', new CategoryResource())->translatable()->icon('heroicons.table-cells'),
+            MenuItem::make('Бренды', new BrandResource())->translatable()->icon('heroicons.table-cells'),
+            MenuItem::make('Продукты', new ProductResource())->translatable()->icon('heroicons.table-cells'),
 
-            MenuItem::make('Заказы', new OrderResource())
+            MenuItem::make('Заказы', new OrderResource())->translatable()->icon('heroicons.table-cells')
         ]);
     }
 }
