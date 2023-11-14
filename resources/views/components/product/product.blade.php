@@ -1,4 +1,4 @@
-@if(!str_contains((isset($product->images[0]['image_path'])), '_копия.'))
+@if(!str_contains((isset($product->images[0]['image_path'])), 'копия'))
     <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="product__item">
             <div class="product__item__pic set-bg" data-setbg="{{ (isset($product->images[0]['image_path'])) ? $product->images[0]['image_path'] : 'img/clients/client-8.png'   }}">
